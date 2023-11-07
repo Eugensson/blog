@@ -1,7 +1,9 @@
 "use client";
+
 import useSWR from "swr";
 import { useState } from "react";
-import { getPostsBySearch } from "../services/getPosts";
+
+import { getPostsBySearch } from "@/services/getPosts";
 
 const PostSearch = () => {
   const { mutate } = useSWR("posts");

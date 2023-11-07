@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function AboutLayout({ children }) {
+const AboutLayout = ({ children }) => {
   return (
     <div>
         <h1>About us</h1>
@@ -16,3 +16,5 @@ export default function AboutLayout({ children }) {
     </div>       
   )
 }
+
+export default AboutLayout;

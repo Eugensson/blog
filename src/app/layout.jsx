@@ -1,5 +1,5 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 import './globals.css';
 
@@ -9,7 +9,7 @@ export const metadata = {
   description: 'Next App description',
 }
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
@@ -20,3 +20,5 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+export default RootLayout;

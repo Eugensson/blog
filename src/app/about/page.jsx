@@ -3,8 +3,10 @@ export const metadata = {
     description: 'About Next App description',
 }
 
-export default function About () {
+const About = () => {
   return (
     <h3>Select subitem</h3>
   )
 }
+
+export default About;

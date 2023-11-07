@@ -1,7 +1,9 @@
 "use client";
+
 import useSWR from "swr";
 import Link from "next/link";
-import { getAllPosts } from "../services/getPosts";
+
+import { getAllPosts } from "@/services/getPosts";
 
 const Posts = () => {
   const { data: posts, isLoading } = useSWR("posts", getAllPosts);
