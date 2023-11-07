@@ -1,5 +1,5 @@
 export default function LoadingPost () {
   return (
-    <h1>Loading...</h1>
+    <h3>Loading...</h3>
   )
 }
