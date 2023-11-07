@@ -1,5 +1,3 @@
-export default function LoadingPost () {
-  return (
-    <h3>Loading...</h3>
-  )
+export default function LoadingPosts() {
+  return <h1>Loading...</h1>;
 }

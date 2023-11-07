@@ -1,13 +1,22 @@
-import Link from 'next/link';
+"use client";
+import useSWR from "swr";
+import Link from "next/link";
+import { getAllPosts } from "../services/getPosts";
 
-export default function Posts ({posts}) {
-  return (
+const Posts = () => {
+  const { data: posts, isLoading } = useSWR("posts", getAllPosts);
+  
+  return isLoading ? (
+    <h3>Loading... </h3>
+  ) : (
     <ul>
-        {posts.map(({id, title}) => (
-            <li key={id}>
-                <Link href={`/blog/${id}`}>{title}</Link>
-            </li>
-        ))}
+      {posts.map((post) => (
+        <li key={post.id}>
+          <Link href={`/blog/${post.id}`}>{post.title}</Link>
+        </li>
+      ))}
     </ul>
-  )
-}
+  );
+};
+
+export { Posts };

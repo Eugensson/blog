@@ -1,16 +1,17 @@
-import Link from 'next/link';
-import Navigation from '@/components/Navigation';
+import { Navigation } from "./Navigation";
 
 const navItems = [
-  {label: 'Home', href: '/'},
-  {label: 'Blog', href: '/blog'},
-  {label: 'About', href: '/about'}
-]
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: "About", href: "/about" },
+];
 
-export default function Header () {
+const Header = () => {
   return (
     <header>
-        <Navigation navLinks={navItems}/>
+      <Navigation navLinks={navItems} />
     </header>
-  )
-}
+  );
+};
+
+export default Header;

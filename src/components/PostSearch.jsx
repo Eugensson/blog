@@ -1,29 +1,31 @@
-'use client';
+"use client";
+import useSWR from "swr";
+import { useState } from "react";
+import { getPostsBySearch } from "../services/getPosts";
 
-import { useState } from 'react';
+const PostSearch = () => {
+  const { mutate } = useSWR("posts");
+  const [search, setSearch] = useState("");
 
-import { getPostsBySearch } from '@/services/getPosts';
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-export default function PostSearch ({onSearch}) {
-    const [search, setSearch] = useState('');
+    const posts = await getPostsBySearch(search);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    mutate(posts);
+  };
 
-        const posts = await getPostsBySearch(search);
-        
-        onSearch(posts);
-    };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="search"
+        placeholder="search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
+};
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type='search'
-                placeholder='search'
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-            ></input>
-            <button type='submit'>Search</button>
-        </form>
-    )
-}
+export { PostSearch };
