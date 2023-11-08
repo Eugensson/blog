@@ -2,15 +2,14 @@
 
 import useSWR from "swr";
 import { useState } from "react";
-
 import { getPostsBySearch } from "@/services/getPosts";
 
 const PostSearch = () => {
   const { mutate } = useSWR("posts");
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");  
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     const posts = await getPostsBySearch(search);
 
@@ -23,7 +22,7 @@ const PostSearch = () => {
         type="search"
         placeholder="search"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(event) => setSearch(event.target.value)}
       />
       <button type="submit">Search</button>
     </form>

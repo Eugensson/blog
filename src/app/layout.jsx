@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 import './globals.css';
+import { Providers } from '@/components/Providers';
 
 
 export const metadata = {
@@ -13,9 +14,11 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className='container'>{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+            <main className='container'>{children}</main>
+          <Footer />
+        </Providers>        
       </body>
     </html>
   )
