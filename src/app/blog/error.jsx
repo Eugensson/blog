@@ -1,7 +1,5 @@
 "use client";
 
-const ErrorWrapper = ({ error }) => {
+export default function ErrorWrapper({ error }) {
   return <h1>Oops!!! {error.message}</h1>;
 }
-
-export default ErrorWrapper;

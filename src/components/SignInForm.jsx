@@ -6,10 +6,10 @@ import { signIn } from "next-auth/react";
 const SignInForm = () => {
   const router = useRouter();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(e.currentTarget);
 
     const res = await signIn("credentials", {
       email: formData.get("email"),

@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/Navigation";
+import { Navigation } from "./Navigation";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -14,4 +14,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export { Header };

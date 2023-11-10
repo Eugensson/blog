@@ -1,12 +1,7 @@
 export const metadata = {
-    title: 'About | Next App',
-    description: 'About Next App description',
-}
+  title: "About | Next App",
+};
 
-const About = () => {
-  return (
-    <h3>Select subitem</h3>
-  )
+export default function About() {
+  return <h3>Select subitem</h3>;
 }
-
-export default About;

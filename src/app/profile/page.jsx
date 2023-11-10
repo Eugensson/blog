@@ -8,7 +8,7 @@ export default async function Profile() {
   return (
     <div>
       <h1>Profile of {session?.user?.name}</h1>
-      {session?.user?.image && <Image src={session.user.image} width={100} height={100} alt="avatar" />}
+      {session?.user?.image && <Image src={session.user.image} width={100} height={100} alt="Avatar" />}
     </div>
   );
 }
