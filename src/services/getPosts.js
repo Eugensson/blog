@@ -1,5 +1,5 @@
 export const getAllPosts = async () => {
-  const response = await fetch("http://localhost:3300/posts");
+  const response = await fetch("https://blog-eugensson.vercel.app/posts");
 
   if (!response.ok) throw new Error("Unable to fetch posts.");
 
@@ -8,7 +8,7 @@ export const getAllPosts = async () => {
 
 export const getPostById = async (id) => {
   const response = await fetch(
-    `http://localhost:3300/posts/${id}`,
+    `https://blog-eugensson.vercel.app/posts/${id}`,
     { headers: { 'Content-type': 'application/json' } }
   );
 

@@ -21,7 +21,7 @@ export async function generateMetadata({ params: { id } }) {
 
 async function removePost(id) {
   "use server";
-  await fetch(`http://localhost:3300/posts/${id}`, {
+  await fetch(`https://blog-eugensson.vercel.app/posts/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

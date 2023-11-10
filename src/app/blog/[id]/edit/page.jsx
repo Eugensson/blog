@@ -7,7 +7,7 @@ async function updatePost(data) {
 
   const { title, body, id } = Object.fromEntries(data);
 
-  const response = await fetch(`http://localhost:3300/posts/${id}`, {
+  const response = await fetch(`https://blog-eugensson.vercel.app/posts/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
